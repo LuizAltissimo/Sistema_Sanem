@@ -1,0 +1,11 @@
+criar container bd:
+
+docker run --name postgres-container -e POSTGRES_PASSWORD=sanem2025 -e POSTGRES_DB=bd_sanem -e POSTGRES_USER=sanem -p 5432:5432 -d postgres:latest
+
+conectar no bd:
+
+docker exec -it postgres-container psql -U postgres
+
+criar volume para o bd:
+
+docker run --name postgres-container -v postgres_data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=sanem2025 -p 5432:5432 -d postgres:latest
