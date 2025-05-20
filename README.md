@@ -12,13 +12,13 @@ Este projeto foi desenvolvido como parte de uma atividade acadêmica, da discipl
 
 | Nome                 | Função           |
 |----------------------|------------------|
-| **Ricardo Sobjak**       | Product Owner    |
-| **Marcos Paulo Soares**  | Scrum Master     |
-| **Giovane Aguirre**      | Desenvolvedor    |
-| **Henrique Triches**     | Desenvolvedor    |
-| **Ellyson Vissotto**     | Desenvolvedor    |
-| **Luiz Altissimo**       | Desenvolvedor    |
-| **Rafael Silva Vieira**  | Desenvolvedor    |
+| **Ricardo Sobjak**       | Product Owner            |
+| **Marcos Paulo Soares**  | Scrum Master             |
+| **Giovane Aguirre**      | Desenvolvedor            |
+| **Henrique Triches**     | Desenvolvedor            |
+| **Ellyson Vissotto**     | Desenvolvedor            |
+| **Luiz Altissimo**       | Desenvolvedor            |
+| **Rafael Silva Vieira**  | Desenvolvedor Front-End  |
 
 Cada integrante contribuirá nas fases de planejamento, desenvolvimento, testes e documentação da aplicação, utilizando a metodologia Scrum
 
@@ -56,7 +56,5 @@ A SANEM realiza atividades sociais com foco em inclusão e suporte comunitário.
 ## 🖥️ Tecnologias Utilizadas
 
 - Node.js / Express
-- Python (Flask)
 - PostgreSQL ou MariaDB
 - React + TypeScript
-- HTML + Bootstrap
