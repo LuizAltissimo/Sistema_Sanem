@@ -1,0 +1,31 @@
+{
+  "name": "sistema-sanem",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de doações da SANEM",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "node dist/test.js",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:restart": "docker-compose restart",
+    "start:docker": "bash start.sh",
+    "start:docker:win": "start.bat"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/pg": "^8.6.6",
+    "rimraf": "^4.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+} 
