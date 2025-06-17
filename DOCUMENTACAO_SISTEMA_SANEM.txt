@@ -1,0 +1,466 @@
+===============================================================================
+                    SISTEMA DE GESTÃO SANEM
+            DOCUMENTAÇÃO COMPLETA PARA APRESENTAÇÃO AO CLIENTE
+===============================================================================
+
+📋 ÍNDICE
+---------
+1. VISÃO GERAL DO SISTEMA
+2. PRINCIPAIS FUNCIONALIDADES
+3. TECNOLOGIAS UTILIZADAS
+4. MÓDULOS DO SISTEMA
+5. NÍVEIS DE ACESSO E PERMISSÕES
+6. ESTRUTURA DO BANCO DE DADOS
+7. INTERFACE E EXPERIÊNCIA DO USUÁRIO
+8. BENEFÍCIOS PARA A ORGANIZAÇÃO
+9. SEGURANÇA E CONTROLE
+10. ESCALABILIDADE E MANUTENÇÃO
+
+===============================================================================
+1. VISÃO GERAL DO SISTEMA
+===============================================================================
+
+O SANEM é um sistema web completo desenvolvido especificamente para 
+organizações sociais que trabalham com gestão de doações e apoio a pessoas 
+em situação de vulnerabilidade social.
+
+🎯 OBJETIVO PRINCIPAL:
+Automatizar e otimizar todo o processo de recebimento, armazenamento, 
+controle e distribuição de doações, desde o cadastro de beneficiários 
+até a geração de relatórios detalhados.
+
+🏢 MODELO DE OPERAÇÃO:
+- Sistema web acessível de qualquer dispositivo com internet
+- Interface moderna e intuitiva
+- Operação 100% online com dados seguros na nuvem
+- Controle completo de usuários e permissões
+
+===============================================================================
+2. PRINCIPAIS FUNCIONALIDADES
+===============================================================================
+
+📊 DASHBOARD EXECUTIVO
+- Visão geral das atividades em tempo real
+- Estatísticas de beneficiários ativos
+- Monitoramento de estoque
+- Indicadores de doações e distribuições mensais
+- Alertas para ações urgentes
+- Histórico de atividades recentes
+
+👥 GESTÃO DE BENEFICIÁRIOS
+- Cadastro completo de beneficiários
+- Controle de dependentes familiares
+- Sistema de limites mensais por beneficiário
+- Acompanhamento do histórico de recebimentos
+- Status de cada beneficiário (Ativo/Inativo/Limite Atingido)
+
+💝 CONTROLE DE DOAÇÕES
+- Registro detalhado de todas as doações recebidas
+- Cadastro de doadores (pessoas físicas e jurídicas)
+- Controle de doações em dinheiro e produtos
+- Acompanhamento do status das doações
+- Histórico completo de doações por doador
+
+📦 GESTÃO DE ESTOQUE
+- Controle completo de todos os itens disponíveis
+- Categorização de produtos (roupas, calçados, alimentos, etc.)
+- Monitoramento de quantidades e limites mínimos
+- Alertas automáticos para itens em falta
+- Controle de condição dos produtos (Ótimo/Bom/Regular)
+
+🚚 SISTEMA DE DISTRIBUIÇÃO
+- Registro de entregas para beneficiários
+- Controle do que foi distribuído e para quem
+- Verificação automática de limites mensais
+- Histórico completo de distribuições
+- Relatórios de itens mais distribuídos
+
+📈 RELATÓRIOS GERENCIAIS
+- Relatórios de beneficiários (ativos, inativos, histórico)
+- Relatórios de doações (por período, doador, tipo)
+- Relatórios de estoque (disponível, crítico, movimentação)
+- Relatórios de distribuições (por beneficiário, período, produto)
+- Gráficos e estatísticas visuais
+- Exportação para PDF e Excel
+
+👨‍💼 GESTÃO DE USUÁRIOS
+- Criação e gerenciamento de contas de usuários
+- Três níveis de acesso: Super Admin, Admin e Voluntário
+- Controle detalhado de permissões por funcionalidade
+- Logs de auditoria de todas as ações no sistema
+- Perfis personalizáveis para cada usuário
+
+===============================================================================
+3. TECNOLOGIAS UTILIZADAS
+===============================================================================
+
+🖥️ FRONTEND (Interface do Usuário):
+- React 18 - Framework JavaScript moderno
+- TypeScript - Linguagem tipada para maior segurança
+- Vite - Ferramenta de desenvolvimento rápida
+- Tailwind CSS - Framework de estilização responsiva
+- shadcn/ui - Componentes de interface profissionais
+- Framer Motion - Animações suaves e modernas
+
+🗄️ BACKEND (Servidor e Banco de Dados):
+- Supabase - Plataforma completa de backend
+- PostgreSQL - Banco de dados robusto e confiável
+- Sistema de autenticação integrado
+- API REST automática
+- Backup automático dos dados
+
+🔧 FERRAMENTAS DE DESENVOLVIMENTO:
+- ESLint - Padronização de código
+- React Query - Gerenciamento de estado
+- React Hook Form - Formulários otimizados
+- Zod - Validação de dados
+- Lucide React - Ícones modernos
+
+===============================================================================
+4. MÓDULOS DO SISTEMA
+===============================================================================
+
+🏠 MÓDULO DASHBOARD
+- Página inicial com visão geral
+- Estatísticas principais em tempo real
+- Atividades recentes do sistema
+- Ações urgentes que precisam de atenção
+- Acesso rápido às funcionalidades principais
+
+👥 MÓDULO PESSOAS
+- Cadastro de Beneficiários
+  * Dados pessoais completos
+  * Endereço e contato
+  * Dependentes familiares
+  * Limite mensal de recebimento
+  * Status e histórico
+
+- Cadastro de Doadores
+  * Pessoas físicas e jurídicas
+  * Histórico de doações
+  * Contatos e informações fiscais
+
+💰 MÓDULO DOAÇÕES
+- Registro de Doações Recebidas
+  * Dinheiro, produtos ou mista
+  * Detalhamento dos itens doados
+  * Valor estimado das doações
+  * Status de processamento
+
+- Controle de Doadores
+  * Histórico completo
+  * Relatórios personalizados
+  * Comunicação e acompanhamento
+
+📦 MÓDULO ESTOQUE
+- Controle de Produtos
+  * Categorização inteligente
+  * Quantidades e limites mínimos
+  * Condição dos produtos
+  * Localização no estoque
+
+- Movimentações
+  * Entrada de produtos (doações)
+  * Saída de produtos (distribuições)
+  * Ajustes e inventários
+  * Histórico completo
+
+🚚 MÓDULO DISTRIBUIÇÃO
+- Entregas para Beneficiários
+  * Seleção de produtos disponíveis
+  * Verificação automática de limites
+  * Registro completo da distribuição
+  * Controle de datas e quantidades
+
+📊 MÓDULO RELATÓRIOS
+- Relatórios Operacionais
+  * Movimentação de estoque
+  * Distribuições por período
+  * Doações recebidas
+  * Beneficiários atendidos
+
+- Relatórios Gerenciais
+  * Análises de tendências
+  * Gráficos e estatísticas
+  * Comparativos mensais/anuais
+  * Indicadores de performance
+
+⚙️ MÓDULO ADMINISTRAÇÃO
+- Gestão de Usuários
+  * Criação de contas
+  * Definição de permissões
+  * Controle de acesso
+  * Logs de auditoria
+
+- Configurações do Sistema
+  * Parâmetros operacionais
+  * Categorias de produtos
+  * Limites e regras
+  * Backup e manutenção
+
+===============================================================================
+5. NÍVEIS DE ACESSO E PERMISSÕES
+===============================================================================
+
+🔴 SUPER ADMINISTRADOR
+Acesso Total ao Sistema:
+✅ Gestão completa de usuários
+✅ Configurações do sistema
+✅ Todos os relatórios e logs
+✅ Auditoria completa
+✅ Backup e restauração
+✅ Todas as funcionalidades operacionais
+
+Perfil: Diretor ou responsável geral da organização
+
+🟡 ADMINISTRADOR
+Acesso Operacional Completo:
+✅ Gestão de beneficiários e doadores
+✅ Controle completo de doações
+✅ Gestão de estoque e distribuições
+✅ Relatórios operacionais
+✅ Configurações básicas
+❌ Gestão de usuários
+❌ Configurações críticas do sistema
+
+Perfil: Coordenador ou gerente operacional
+
+🟢 VOLUNTÁRIO
+Acesso Básico e Controlado:
+✅ Dashboard básico
+✅ Consulta de beneficiários
+✅ Registro de doações simples
+✅ Consulta de estoque
+❌ Distribuições
+❌ Relatórios avançados
+❌ Configurações
+
+Perfil: Voluntários e auxiliares
+
+===============================================================================
+6. ESTRUTURA DO BANCO DE DADOS
+===============================================================================
+
+O sistema utiliza 16 tabelas organizadas logicamente:
+
+👥 GESTÃO DE PESSOAS (4 tabelas):
+- usuarios: Contas de acesso ao sistema
+- beneficiarios: Pessoas que recebem doações
+- dependentes: Familiares dos beneficiários
+- doadores: Pessoas/empresas que fazem doações
+
+📦 CONTROLE DE ESTOQUE (3 tabelas):
+- categorias_produtos: Tipos de produtos (roupas, calçados, etc.)
+- produtos: Itens individuais do estoque
+- movimentacoes_estoque: Histórico de entrada/saída
+
+💝 GESTÃO DE DOAÇÕES (2 tabelas):
+- doacoes: Registro das doações recebidas
+- itens_doacao: Produtos específicos de cada doação
+
+🚚 CONTROLE DE DISTRIBUIÇÃO (2 tabelas):
+- distribuicoes: Entregas para beneficiários
+- itens_distribuicao: Produtos específicos distribuídos
+
+⚙️ SISTEMA E CONTROLE (5 tabelas):
+- audit_logs: Logs de auditoria de todas as ações
+- configuracoes_sistema: Parâmetros do sistema
+- notificacoes: Sistema de avisos e alertas
+- atividades_sistema: Feed de atividades do dashboard
+- periodos_mensais: Controle de períodos e limites
+
+CARACTERÍSTICAS TÉCNICAS:
+- Relacionamentos bem definidos entre tabelas
+- Chaves estrangeiras para integridade dos dados
+- Campos de auditoria (criado em, atualizado em, criado por)
+- Validações no banco de dados
+- Indexes para performance
+- Backup automático diário
+
+===============================================================================
+7. INTERFACE E EXPERIÊNCIA DO USUÁRIO
+===============================================================================
+
+🎨 DESIGN MODERNO E PROFISSIONAL:
+- Interface limpa e intuitiva
+- Cores harmoniosas e acessíveis
+- Ícones claros e significativos
+- Tipografia legível
+- Tema claro e escuro disponível
+
+📱 RESPONSIVIDADE TOTAL:
+- Funciona perfeitamente em computadores
+- Adaptado para tablets
+- Otimizado para smartphones
+- Interface toca-amigável
+- Navegação simplificada em telas menores
+
+🚀 PERFORMANCE E VELOCIDADE:
+- Carregamento rápido das páginas
+- Busca instantânea nos dados
+- Filtros em tempo real
+- Animações suaves e profissionais
+- Cache inteligente dos dados
+
+♿ ACESSIBILIDADE:
+- Compatível com leitores de tela
+- Navegação por teclado
+- Contraste adequado para baixa visão
+- Textos alternativos em imagens
+- Estrutura semântica correta
+
+🔍 USABILIDADE AVANÇADA:
+- Busca inteligente em todos os módulos
+- Filtros múltiplos e combinados
+- Ordenação flexível de dados
+- Ações em lote para eficiência
+- Atalhos de teclado para usuários avançados
+
+===============================================================================
+8. BENEFÍCIOS PARA A ORGANIZAÇÃO
+===============================================================================
+
+💰 ECONOMIA DE TEMPO E RECURSOS:
+- Automatização de processos manuais
+- Redução de erros humanos
+- Eliminação de planilhas desorganizadas
+- Busca instantânea de informações
+- Relatórios automáticos
+
+📊 CONTROLE E TRANSPARÊNCIA:
+- Visibilidade completa das operações
+- Rastreabilidade de todas as ações
+- Histórico detalhado preservado
+- Indicadores de performance claros
+- Auditoria completa das atividades
+
+🎯 EFICIÊNCIA OPERACIONAL:
+- Otimização do fluxo de trabalho
+- Eliminação de duplicações
+- Controle preciso de estoque
+- Distribuição equilibrada
+- Aproveitamento máximo das doações
+
+📈 CRESCIMENTO SUSTENTÁVEL:
+- Base sólida para expansão
+- Padronização de processos
+- Formação de histórico confiável
+- Relatórios para captação de recursos
+- Demonstração de impacto social
+
+🤝 MELHORIA NO ATENDIMENTO:
+- Atendimento mais rápido aos beneficiários
+- Informações sempre atualizadas
+- Controle justo de limites
+- Histórico de atendimentos
+- Identificação de necessidades prioritárias
+
+===============================================================================
+9. SEGURANÇA E CONTROLE
+===============================================================================
+
+🔐 AUTENTICAÇÃO E AUTORIZAÇÃO:
+- Login seguro com email e senha
+- Sessões com tempo limite
+- Controle rigoroso de permissões
+- Bloqueio automático por tentativas inválidas
+- Logout automático por inatividade
+
+🛡️ PROTEÇÃO DE DADOS:
+- Conexão criptografada (HTTPS)
+- Dados armazenados com segurança na nuvem
+- Backup automático diário
+- Recuperação de dados em caso de problemas
+- Conformidade com LGPD (Lei Geral de Proteção de Dados)
+
+📋 AUDITORIA COMPLETA:
+- Log de todas as ações realizadas
+- Identificação do usuário responsável
+- Data e hora de cada operação
+- Histórico de alterações
+- Relatórios de auditoria detalhados
+
+🚨 MONITORAMENTO E ALERTAS:
+- Alertas para estoque baixo
+- Notificações de atividades importantes
+- Monitoramento de acesso não autorizado
+- Alertas de sistema e manutenção
+- Relatórios de uso e performance
+
+===============================================================================
+10. ESCALABILIDADE E MANUTENÇÃO
+===============================================================================
+
+📈 CRESCIMENTO ACOMPANHADO:
+- Arquitetura preparada para crescimento
+- Suporte a múltiplas organizações (futuramente)
+- Capacidade de processar grandes volumes de dados
+- Performance mantida com o aumento de usuários
+- Infraestrutura elástica na nuvem
+
+🔧 MANUTENÇÃO SIMPLIFICADA:
+- Atualizações automáticas do sistema
+- Correções de bugs aplicadas automaticamente
+- Novas funcionalidades adicionadas regularmente
+- Monitoramento proativo da infraestrutura
+- Suporte técnico especializado
+
+🌐 TECNOLOGIA ATUAL:
+- Baseado em tecnologias modernas e estáveis
+- Framework com ampla comunidade de desenvolvedores
+- Código limpo e bem documentado
+- Facilidade para futuras customizações
+- Integração com outras ferramentas possível
+
+===============================================================================
+CONCLUSÃO
+===============================================================================
+
+O Sistema SANEM representa uma solução completa e moderna para organizações 
+sociais que desejam otimizar sua gestão de doações e atendimento a 
+beneficiários.
+
+Com sua interface intuitiva, funcionalidades abrangentes e tecnologia robusta, 
+o sistema oferece:
+
+✅ Controle total das operações
+✅ Transparência e auditoria
+✅ Eficiência operacional
+✅ Crescimento sustentável
+✅ Segurança dos dados
+✅ Facilidade de uso
+
+O investimento no Sistema SANEM se traduz em:
+- Economia de tempo da equipe
+- Redução de erros operacionais
+- Melhoria no atendimento aos beneficiários
+- Relatórios profissionais para prestação de contas
+- Base sólida para crescimento da organização
+
+===============================================================================
+INFORMAÇÕES TÉCNICAS DE SUPORTE
+===============================================================================
+
+🌐 ACESSO AO SISTEMA:
+URL: A ser definizada após hospedagem em produção
+Navegadores suportados: Chrome, Firefox, Safari, Edge (versões atuais)
+Dispositivos: Computadores, tablets e smartphones
+
+📞 SUPORTE TÉCNICO:
+Documentação completa disponível
+Treinamento para usuários incluído
+Suporte por email e telefone
+Atualizações e melhorias contínuas
+
+🔧 REQUISITOS TÉCNICOS:
+- Conexão com internet estável
+- Navegador web atualizado
+- Não requer instalação de software
+- Funciona em Windows, Mac, Linux e dispositivos móveis
+
+===============================================================================
+Data de elaboração: Janeiro de 2025
+Versão do documento: 1.0
+Sistema: SANEM - Gestão de Doações
+Desenvolvido com tecnologia React + Supabase
+===============================================================================
