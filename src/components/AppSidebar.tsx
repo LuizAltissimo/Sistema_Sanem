@@ -12,7 +12,9 @@ import {
   Shield,
   Settings,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Sun,
+  Moon
 } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -20,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useTheme } from "@/hooks/useTheme";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -29,6 +32,7 @@ export function AppSidebar() {
   const location = useLocation();
   const { toast } = useToast();
   const { user, logout, hasPermission } = useAuth();
+  const { theme, setTheme } = useTheme();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const menuItems = [
@@ -158,43 +162,52 @@ export function AppSidebar() {
       >
         {/* Header */}
         <div className="p-4 border-b border-neutral-200 dark:border-neutral-700">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+          {!isCollapsed ? (
+            // Layout expandido
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <img 
+                    src="/sanem_logo_transparent.png" 
+                    alt="SANEM Logo" 
+                    className="h-8 w-8 object-contain flex-shrink-0"
+                  />
+                  <motion.div
+                    initial={false}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">SANEM</h2>
+                  </motion.div>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsCollapsed(true)}
+                  className="h-8 w-8 p-0"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          ) : (
+            // Layout colapsado - Logo centralizada com seta ao lado
+            <div className="flex items-center justify-between w-full">
               <img 
                 src="/sanem_logo_transparent.png" 
                 alt="SANEM Logo" 
-                className="h-8 w-8 object-contain flex-shrink-0"
+                className="h-8 w-8 object-contain"
               />
-              {!isCollapsed && (
-                <motion.div
-                  initial={false}
-                  animate={{ opacity: isCollapsed ? 0 : 1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">SANEM</h2>
-                </motion.div>
-              )}
-            </div>
-            <div className="flex items-center gap-1">
-              {/* Theme Toggle */}
-              <div className="flex items-center">
-                <ThemeToggle />
-              </div>
-              {/* Collapse Button */}
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setIsCollapsed(!isCollapsed)}
+                onClick={() => setIsCollapsed(false)}
                 className="h-8 w-8 p-0"
               >
-                {isCollapsed ? (
-                  <ChevronRight className="h-4 w-4" />
-                ) : (
-                  <ChevronLeft className="h-4 w-4" />
-                )}
+                <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
-          </div>
+          )}
           
           {/* User Info */}
           {user && !isCollapsed && (
@@ -244,7 +257,7 @@ export function AppSidebar() {
                       "flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors",
                       isActive 
                         ? "bg-neutral-200 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100" 
-                        : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-150 dark:hover:bg-neutral-750"
+                        : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
                     )}
                   >
                     <Icon className="h-5 w-5 flex-shrink-0" />
@@ -290,7 +303,7 @@ export function AppSidebar() {
                         "flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors",
                         isActive 
                           ? "bg-neutral-200 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100" 
-                          : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-150 dark:hover:bg-neutral-750"
+                          : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
                       )}
                     >
                       <Icon className="h-5 w-5 flex-shrink-0" />
@@ -312,23 +325,50 @@ export function AppSidebar() {
           )}
         </div>
 
-        {/* Logout Button */}
+        {/* Footer - Theme Toggle e Logout */}
         <div className="p-4 border-t border-neutral-200 dark:border-neutral-700">
-          <div 
-            onClick={handleLogout}
-            className="flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20"
-          >
-            <LogOut className="h-5 w-5 flex-shrink-0" />
-            {!isCollapsed && (
-              <motion.span
-                className="text-sm font-medium"
-                initial={false}
-                animate={{ opacity: isCollapsed ? 0 : 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                Sair
-              </motion.span>
-            )}
+          <div className="space-y-1">
+            {/* Theme Toggle */}
+            <div 
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              className={cn(
+                "flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700",
+                isCollapsed ? "justify-center" : ""
+              )}
+            >
+              <div className="h-5 w-5 flex items-center justify-center">
+                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              </div>
+              {!isCollapsed && (
+                <motion.span
+                  className="text-sm font-medium"
+                  initial={false}
+                  animate={{ opacity: isCollapsed ? 0 : 1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Alterar tema
+                </motion.span>
+              )}
+            </div>
+            
+            {/* Logout Button */}
+            <div 
+              onClick={handleLogout}
+              className="flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20"
+            >
+              <LogOut className="h-5 w-5 flex-shrink-0" />
+              {!isCollapsed && (
+                <motion.span
+                  className="text-sm font-medium"
+                  initial={false}
+                  animate={{ opacity: isCollapsed ? 0 : 1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Sair
+                </motion.span>
+              )}
+            </div>
           </div>
         </div>
       </motion.div>
