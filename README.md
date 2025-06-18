@@ -1,11 +1,28 @@
-# 🏥 SANEM - Sistema de Gerenciamento de Doações
+> # 🧥 Sistema de Gerenciamento de Doações – SANEM
 
-> **Sistema completo para gestão de doações e apoio a pessoas em vulnerabilidade social**
+Este sistema foi desenvolvido para gerenciar de forma eficiente as doações recebidas e distribuídas pelo brechó beneficente da **SANEM**, uma iniciativa voltada ao atendimento de pessoas em situação de vulnerabilidade social.
 
-[![React](https://img.shields.io/badge/React-18.0-blue.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://typescriptlang.org/)
-[![Supabase](https://img.shields.io/badge/Supabase-Database-green.svg)](https://supabase.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC.svg)](https://tailwindcss.com/)
+---
+
+## 🧑‍💻 Apresentação dos Alunos
+
+Este projeto foi desenvolvido como parte de uma atividade acadêmica, da disciplina de Oficina de Desenvolvimento de Software do curso de Ciência da Computação da UTFPR - Medianeira.
+
+### 👥 Equipe Técnica
+
+| Nome                 | Função           |
+|----------------------|------------------|
+| **Ricardo Sobjak**       | Product Owner                |
+| **Marcos Paulo Soares**  | Scrum Master                 |
+| **Giovane Aguirre**      | Desenvolvedor                |
+| **Henrique Triches**     | Desenvolvedor Back-End       |
+| **Ellyson Vissotto**     | Desenvolvedor                |
+| **Luiz Altissimo**       | Desenvolvedor Banco de dados |
+| **Rafael Silva Vieira**  | Desenvolvedor Front-End      |
+
+Cada integrante contribuirá nas fases de planejamento, desenvolvimento, testes e documentação da aplicação, utilizando a metodologia Scrum
+
+---
 
 ## 🚀 Tecnologias
 
